@@ -11,7 +11,7 @@ const logginButton = document.getElementById('loggin-btn').addEventListener('cli
     const InputPass = input.value ;
     // console.log(InputPass); 
 
-    if ( contactText === '01234567890' && InputPass === '1234'){
+    if ( contactText === '01601015045' && InputPass === '1234'){
         alert('Successfully logged In');
         window.location.assign("/home.html")
         
