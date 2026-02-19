@@ -32,18 +32,18 @@ function showOnly (id){
     const cashOut = document.getElementById('cash-out');
     const history = document.getElementById('history');
     const transfer = document.getElementById('transfer-money');
-    const pay = document.getElementById("pay-bill")
+    const pay = document.getElementById("pay-bill");
     // console.log(` add money ${addMoney}, cashOut ${cashOut}`);
 
     // Sobaike hide korer dew
     addMoney.classList.add('hidden');
     cashOut.classList.add('hidden');
-    history.classList.add('hidden')
-    transfer.classList.add('hidden')
-    pay.classList.add("hidden")
+    history.classList.add('hidden');
+    transfer.classList.add('hidden');
+    pay.classList.add("hidden");
 
     //Id ala gulake show koraw
     const secleted = document.getElementById(id);
-    secleted.classList.remove('hidden')
+    secleted.classList.remove('hidden');8
     
 }
