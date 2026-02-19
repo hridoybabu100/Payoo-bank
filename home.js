@@ -10,15 +10,16 @@ const CashOutButton = document.getElementById("Cashout-btn").addEventListener('c
     const cashOutAmount = getValueInput("cashout-amount");
     
     //Main Balance
-    const mainBalance = document.getElementById("balance");
-    const balance = mainBalance.innerText;
-    console.log('Balance', balance);
+    // const mainBalance = document.getElementById("balance");
+    // const balance = mainBalance.innerText;
+    const balanceElement = getBalance("balance")
+    console.log('Balance', balanceElement);
 
     //Balance Calculate
-    const newBalance = Number(balance) - Number(cashOutAmount);
+    const newBalance = balanceElement - Number(cashOutAmount); 
     console.log('New Balance', newBalance);
 
-    //Balance Less Than 0 tk
+//     //Balance Less Than 0 tk
     if ( newBalance < 0 ){
         alert('Your Balance Empty')
         return
@@ -27,8 +28,16 @@ const CashOutButton = document.getElementById("Cashout-btn").addEventListener('c
     const cashOutPin = getValueInput("cashout-pin");
     if ( cashOutPin === '1234' ){
         alert('CashOut Successfull');
-        mainBalance.innerText = newBalance ;
-        window.location('/home.html')
+        // document.getElementById('balance').innerText = newBalance ;
+        setBalance(newBalance)
+         const history = document.getElementById('history');
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+         <div class="history-box p-8 bg-slate-200 ">
+        CashOut Successfull to ${cashOutNumber} from the ${ new Date}
+        </div>
+        `
+        history.appendChild(newHistory);
     }else{
         alert('Invalid Pin')
         return ;
